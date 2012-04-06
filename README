@@ -1,17 +1,17 @@
-This repository contains a Timer class used to represent a stopwatch for your 
-C++ code. This class is intended to abstract away as many of the details 
-related to recording the running time of your code as possible. The stopwatch 
-can be started, stopped, reset, and queried for the current time elapsed 
-regardless of whether it is stopped or is still running. 
+This repository contains a Timer class which is used to represent a stopwatch 
+for your C++ code. This class is intended to abstract away as many of the 
+details related to recording the running time of your code as possible. The 
+stopwatch can be started, stopped, reset, and queried for the current time 
+elapsed regardless of whether or not it is stopped or is still running. 
 
 Another useful feature is the ability to record "splits" - times associated 
-with messages - and then output to the console at the end of runtime. The 
-splits are a static class member so that all instantiations of Timer class 
-point to the same C++ vector of splits. This allows you to create different 
-Timer classes throughout your code and each one can time and then record a 
-certain portion of the code. Finally, at the end of runtime, only one Timer 
-class needs to call the "printSplits()" method which will output the formatted 
-timing results to the console.
+with messages - and then output all splits as formatted messages to the 
+console at the end of runtime. The splits are a static class member so that 
+all instantiations of Timer class point to the same C++ vector of splits. 
+This allows you to create different Timer classes throughout your code and 
+each one can time and then record a certain portion of the code. Finally, at 
+the end of runtime, only one Timer class needs to call the "printSplits()" 
+method which will output the formatted timing results to the console.
 
 Please feel free to use, distribute and contribute!
 
