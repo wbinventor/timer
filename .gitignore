@@ -1,0 +1,17 @@
+bin
+obj
+Makefile
+*~
+Debug/
+Release/
+*.d
+*.o
+*.a
+*.out
+.cproject
+.project
+Doxyfile
+src/Doxyfile
+src/Doxyfile.bak
+html/
+latex/

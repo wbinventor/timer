@@ -1,0 +1,56 @@
+This repository contains a Timer class used to represent a stopwatch for your 
+C++ code. This class is intended to abstract away as many of the details 
+related to recording the running time of your code as possible. The stopwatch 
+can be started, stopped, reset, and queried for the current time elapsed 
+regardless of whether it is stopped or is still running. 
+
+Another useful feature is the ability to record "splits" - times associated 
+with messages - and then output to the console at the end of runtime. The 
+splits are a static class member so that all instantiations of Timer class 
+point to the same C++ vector of splits. This allows you to create different 
+Timer classes throughout your code and each one can time and then record a 
+certain portion of the code. Finally, at the end of runtime, only one Timer 
+class needs to call the "printSplits()" method which will output the formatted 
+timing results to the console.
+
+Please feel free to use, distribute and contribute!
+
+
+===============================================================================
+                         Build as a static library
+===============================================================================
+
+To compile these functions as a static library which you can then link to
+any C++ project, execute the following bash commands from within the source
+code directory:
+
+g++ -lrt -c -o Timer.o Timer.cpp
+ar -cvq libtimer.a Timer.o
+
+That's all there is to it! You should now be ready to include and link the 
+library in any C++ source code you wish.
+
+
+===============================================================================
+                            Link to your project
+===============================================================================
+
+To link to the static library libtimer which you created above, you simply 
+need to do the following two things:
+
+1) Include the library's header file in each source file which will use the 
+function calls:
+
+#include "Timer.h"
+
+2) To compile source files which use the library, include the path to the 
+library in your makefile for each of the source files which use the library:
+
+-I"/{path to the directory}/timer"
+
+3) To link source files  which use the library, include the linker flag 
+"-ltimer", the appropriate flag for the timing C++ standard timing library
+on your platform (on Linux it is "-lrt"), along with the path to the 
+library in your makefile:
+
+-L"/{path to the directory}/timer"
